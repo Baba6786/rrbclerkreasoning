@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ExamPro • RRB Clerk Prelims 2023 - Reasoning Ability (1-40)</title>
+    <title>ExamPro • RRB Clerk Prelims 2026 - Reasoning Ability (1-40)</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box;}
         body{font-family:system-ui,sans-serif;background:#f1f5f9;color:#1e2937;}
@@ -87,12 +87,70 @@
     </div>
 </div>
 
-<!-- SCORE & ANALYSIS (same as before) -->
-<div id="score" class="page"> ... (score code same) ... </div>
-<div id="analysis" class="page"> ... (analysis code same) ... </div>
+<!-- SCORE PAGE -->
+<div id="score" class="page" style="background:#f8fafc; align-items:center; justify-content:center; padding:20px;">
+    <div style="background:white; max-width:480px; width:100%; border-radius:24px; padding:40px 30px; box-shadow:0 20px 60px rgba(0,0,0,0.1); text-align:center;">
+        <h1 style="font-size:28px; color:#1e2937; margin-bottom:10px;">Test Completed!</h1>
+        <p style="color:#64748b; margin-bottom:30px;">RRB Clerk Prelims 2026 - Reasoning Ability</p>
+        
+        <div style="margin:30px 0; padding:30px; background:#f1f5f9; border-radius:20px;">
+            <div style="font-size:14px; color:#64748b; margin-bottom:8px;">Your Score</div>
+            <div id="score-main" style="font-size:52px; font-weight:900; color:#2563eb; line-height:1;">0.00</div>
+            <div style="font-size:15px; color:#64748b;">out of 40</div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:30px 0;">
+            <div style="background:#f1f5f9; padding:20px; border-radius:16px;">
+                <div style="color:#22c55e; font-size:28px; font-weight:700;" id="correct">0</div>
+                <div style="font-size:14px; color:#64748b;">Correct</div>
+            </div>
+            <div style="background:#f1f5f9; padding:20px; border-radius:16px;">
+                <div style="color:#ef4444; font-size:28px; font-weight:700;" id="wrong">0</div>
+                <div style="font-size:14px; color:#64748b;">Wrong</div>
+            </div>
+        </div>
+
+        <div style="margin:30px 0;">
+            <div style="font-size:14px; color:#64748b; margin-bottom:10px;">Accuracy</div>
+            <div style="position:relative; width:180px; height:180px; margin:0 auto;">
+                <svg width="180" height="180" style="transform:rotate(-90deg);">
+                    <circle cx="90" cy="90" r="82" fill="none" stroke="#e2e8f0" stroke-width="16"></circle>
+                    <circle id="pie" cx="90" cy="90" r="82" fill="none" 
+                            stroke="#2563eb" stroke-width="16"
+                            stroke-dasharray="515" stroke-dashoffset="515"
+                            stroke-linecap="round"></circle>
+                </svg>
+                <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center;">
+                    <div id="accuracy" style="font-size:32px; font-weight:700; color:#1e2937;">0</div>
+                    <div style="font-size:14px; color:#64748b;">%</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="display:flex; gap:15px; margin-top:40px;">
+            <button onclick="showAnalysis()" 
+                    style="flex:1; padding:16px; background:#2563eb; color:white; border:none; border-radius:16px; font-weight:700; font-size:17px; cursor:pointer;">
+                View Detailed Analysis
+            </button>
+            <button onclick="restart()" 
+                    style="flex:1; padding:16px; background:white; color:#1e2937; border:2px solid #cbd5e1; border-radius:16px; font-weight:700; font-size:17px; cursor:pointer;">
+                Restart Test
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ANALYSIS PAGE -->
+<div id="analysis" class="page" style="flex-direction:column;">
+    <header style="background:white; padding:15px 20px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #e2e8f0; position:sticky; top:0; z-index:100;">
+        <div style="font-weight:700; color:#2563eb;">Detailed Analysis</div>
+        <button onclick="backToScore()" style="background:#ef4444; color:white; border:none; padding:8px 20px; border-radius:12px; cursor:pointer;">Back to Score</button>
+    </header>
+    <div id="analysis-content" style="flex:1; overflow-y:auto; padding:20px; background:#f8fafc;"></div>
+</div>
 
 <script>
-// FULL 40 QUESTIONS WITH PROPER LINE BREAKS IN STATEMENTS & CONCLUSIONS
+// FULL 40 QUESTIONS
 const questions = [
     {direction:"Directions (1-5): Study the following information carefully and answer the questions given below.",para:"Seven persons A, B, C, D, E, F and G are living in a seven storey building but not necessarily in the same order. The bottommost floor is numbered as 1 and the floor immediately above is numbered as 2 and so on. <br>Less than three persons live above E. Only two persons live between E and D. As many persons live above D as below B. A lives immediately below G. C lives below A.",q:"Q1. Who among the following person lives three floors above G?",opt:["(a) E","(b) C","(c) B","(d) F","(e) None of these"],ans:3,exp:"F lives three floors above G."},
     {direction:"Directions (1-5): Study the following information carefully and answer the questions given below.",para:"Seven persons A, B, C, D, E, F and G are living in a seven storey building but not necessarily in the same order. The bottommost floor is numbered as 1 and the floor immediately above is numbered as 2 and so on. <br>Less than three persons live above E. Only two persons live between E and D. As many persons live above D as below B. A lives immediately below G. C lives below A.",q:"Q2. Which of the following statements is/are true with respect to the final arrangement?",opt:["(a) F lives two floors above E","(b) Only three persons live between G and C","(c) D lives immediately above B","(d) All are true","(e) None of these"],ans:0,exp:"Only statement A is true."},
@@ -104,10 +162,9 @@ const questions = [
     {direction:"Directions (6-8): Study the following information carefully and answer the questions given below.",para:"J is the father of only X and Y. Z is the wife of Y and daughter of C. B is the grandson of J. B has only one aunt.",q:"Q7. How is Z related to X?",opt:["(a) Brother-in-law","(b) Cousin Sister","(c) Maternal aunt","(d) Sister-in-law","(e) Cannot be determined"],ans:3,exp:"Sister-in-law."},
     {direction:"Directions (6-8): Study the following information carefully and answer the questions given below.",para:"J is the father of only X and Y. Z is the wife of Y and daughter of C. B is the grandson of J. B has only one aunt.",q:"Q8. If E is the aunt of X, then how is E related to J?",opt:["(a) Sister","(b) Mother","(c) Son","(d) Sister-in-law","(e) Cannot be determined"],ans:4,exp:"Cannot be determined."},
 
-    {direction:"",para:"",q:"Q9. If in the word <b>\"QUALITY\"</b>all the vowels are changed to the immediate previous letter and all the consonants are changed to the immediate next letter as per the English alphabetical series, then which of the following letter is fourth from the left end?",opt:["(a) H","(b) U","(c) Z","(d) M","(e) R"],ans:3,exp:"M is fourth from the left end."},
+    {direction:"",para:"",q:"Q9. If in the word <b>\"QUALITY\"</b> all the vowels are changed to the immediate previous letter and all the consonants are changed to the immediate next letter as per the English alphabetical series, then which of the following letter is fourth from the left end?",opt:["(a) H","(b) U","(c) Z","(d) M","(e) R"],ans:3,exp:"M is fourth from the left end."},
     {direction:"",para:"",q:"Q10. How many such pairs of digits are there in the number <b>\"95426313\"</b> each of which has as many digits between them as there are in the number series (both forward and backward)?",opt:["(a) One","(b) Two","(c) Three","(d) More than three","(e) None"],ans:2,exp:"Three such pairs."},
 
-    // Properly formatted Syllogism Questions
     {direction:"Directions (11-15): Read both the conclusions and then decide which of the given conclusions logically follows from the given statements disregarding the commonly known facts.",para:"",q:"Q11. <b>Statements:</b><br>Only a few masks are sanitizer<br>Some sanitizers are Vaccine<br>All Vaccine are tablets<br><br><b>Conclusions:</b><br>I. Some sanitizers are tablets<br>II. No vaccine is Mask",opt:["(a) Only conclusion I follows","(b) Either conclusion I or II follows","(c) Both conclusions I and II follow","(d) Only conclusion II follows","(e) Neither conclusion I nor II follows"],ans:0,exp:"Only conclusion I follows."},
     {direction:"Directions (11-15): Read both the conclusions and then decide which of the given conclusions logically follows from the given statements disregarding the commonly known facts.",para:"",q:"Q12. <b>Statements:</b><br>All invasions are seizure<br>Only a few seizures are ride<br>No ride is attack<br><br><b>Conclusions:</b><br>I. All attacks can be invasions<br>II. All seizures can never be attack",opt:["(a) Only conclusion I follows","(b) Either conclusion I or II follows","(c) Both conclusions I and II follow","(d) Only conclusion II follows","(e) Neither conclusion I nor II follows"],ans:2,exp:"Both conclusions I and II follow."},
     {direction:"Directions (11-15): Read both the conclusions and then decide which of the given conclusions logically follows from the given statements disregarding the commonly known facts.",para:"",q:"Q13. <b>Statements:</b><br>Only a few Drums are Cello<br>All Cello are Banjo<br>No Banjo is Guitar<br><br><b>Conclusions:</b><br>I. Some Cello can be Guitar<br>II. Some Banjo are Drums",opt:["(a) Only conclusion I follows","(b) Either conclusion I or II follows","(c) Both conclusions I and II follow","(d) Only conclusion II follows","(e) Neither conclusion I nor II follows"],ans:3,exp:"Only conclusion II follows."},
@@ -126,7 +183,6 @@ const questions = [
     {direction:"Directions (21-25): Study the following information carefully and answer the questions given below.",para:"<b> A @ $ Z 5 6 E 7 ! © K 5 + L 9 0 * G 3 U % P J £ D H % </b>",q:"Q24. How many consonants are there which are immediately preceded by a consonant and immediately followed by a symbol?",opt:["(a) One","(b) Two","(c) Three","(d) Four","(e) None"],ans:1,exp:"Two consonants."},
     {direction:"Directions (21-25): Study the following information carefully and answer the questions given below.",para:"<b> A @ $ Z 5 6 E 7 ! © K 5 + L 9 0 * G 3 U % P J £ D H % </b>",q:"Q25. Which of the following element is tenth to the right of the ninth element from the left end?",opt:["(a) A","(b) *","(c) 3","(d) U","(e) None of these"],ans:2,exp:"3 is the required element."},
 
-    // Properly formatted Inequality Questions
     {direction:"Directions (26-30): In these questions, the relationship between different elements is shown in the statements. The statements are followed by two conclusions. Choose the conclusion(s) which is/are definitely true.",para:"",q:"Q26. <b>Statements:</b><br>R = P ≥ U > T ≤ O < Q ≤ X<br><br><b>Conclusions</b>:<br>I. X > T<br>II. T ≤ X",opt:["(a) Only conclusion I is true","(b) Only conclusion II is true","(c) Both conclusions I and II are true","(d) Either conclusion I or II is true","(e) Neither conclusion I nor II is true"],ans:0,exp:"Only conclusion I is true."},
     {direction:"Directions (26-30): In these questions, the relationship between different elements is shown in the statements. The statements are followed by two conclusions. Choose the conclusion(s) which is/are definitely true.",para:"",q:"Q27. <b>Statements:</b><br>P > R ≤ S = T < Q ≥ W > Y ≥ X<br><br><b>Conclusions:</b><br>I. R < W<br>II. T > X",opt:["(a) Only conclusion I is true","(b) Only conclusion II is true","(c) Both conclusions I and II are true","(d) Either conclusion I or II is true","(e) Neither conclusion I nor II is true"],ans:4,exp:"Neither conclusion follows."},
     {direction:"Directions (26-30): In these questions, the relationship between different elements is shown in the statements. The statements are followed by two conclusions. Choose the conclusion(s) which is/are definitely true.",para:"",q:"Q28. <b>Statements:</b><br>M ≤ R < O ≤ D ≤ G = J ≥ K<br><br><b>Conclusions:</b><br>I. M ≤ G<br>II. O ≥ K",opt:["(a) Only conclusion I is true","(b) Only conclusion II is true","(c) Both conclusions I and II are true","(d) Either conclusion I or II is true","(e) Neither conclusion I nor II is true"],ans:4,exp:"Neither conclusion follows."},
@@ -153,9 +209,6 @@ let timeLeft = 1500; // 25 minutes
 let timerId;
 const totalQ = questions.length;
 
-// Rest of the script (login, timer, loadQuestion, etc.) remains exactly the same as previous version
-// (I have kept the full working script below for your convenience)
-
 function login() {
     if (document.getElementById('pass').value === "19991010") {
         document.getElementById('login').classList.remove('active');
@@ -172,7 +225,9 @@ function login() {
 function startTest() {
     document.getElementById('instructions').classList.remove('active');
     document.getElementById('test').classList.add('active');
-    current = 0; answers = {}; timeLeft = 1500;
+    current = 0; 
+    answers = {}; 
+    timeLeft = 1500;
     renderPalette();
     loadQuestion();
     startTimer();
@@ -237,24 +292,37 @@ function updatePalette() {
     });
 }
 
-function nextQ() { current = (current + 1) % totalQ; loadQuestion(); }
-function prevQ() { current = (current - 1 + totalQ) % totalQ; loadQuestion(); }
+function nextQ() { 
+    current = (current + 1) % totalQ; 
+    loadQuestion(); 
+}
+
+function prevQ() { 
+    current = (current - 1 + totalQ) % totalQ; 
+    loadQuestion(); 
+}
 
 function submitTest() {
     clearInterval(timerId);
+    
     let correct = 0, wrong = 0;
     questions.forEach((q, i) => {
         if (answers[i] === q.ans) correct++;
         else if (answers[i] !== undefined) wrong++;
     });
+
     const rawScore = correct - (wrong * 0.25);
     const accuracy = (correct + wrong) > 0 ? Math.round((correct / (correct + wrong)) * 100) : 0;
 
+    // Update score safely
     document.getElementById('score-main').textContent = rawScore.toFixed(2);
     document.getElementById('accuracy').textContent = accuracy;
-    document.getElementById('pie').style.setProperty('--percent', accuracy + '%');
     document.getElementById('correct').textContent = correct;
     document.getElementById('wrong').textContent = wrong;
+    
+    // Update pie chart
+    const pie = document.getElementById('pie');
+    if (pie) pie.style.strokeDashoffset = 515 - (515 * accuracy / 100);
 
     document.getElementById('test').classList.remove('active');
     document.getElementById('score').classList.add('active');
@@ -263,11 +331,13 @@ function submitTest() {
 function showAnalysis() {
     document.getElementById('score').classList.remove('active');
     document.getElementById('analysis').classList.add('active');
+    
     let html = '';
     questions.forEach((q, i) => {
         let userAns = answers[i];
         let status = userAns === q.ans ? '<span style="color:#22c55e;font-weight:700;">✓ Correct</span>' :
                      (userAns !== undefined ? '<span style="color:#ef4444;font-weight:700;">✗ Wrong</span>' : '<span style="color:#ca8a04;">Not attempted</span>');
+        
         html += `
         <div style="margin-bottom:40px;padding-bottom:25px;border-bottom:1px solid #e2e8f0;">
             ${q.direction ? `<div class="direction">${q.direction}</div>` : ''}
@@ -292,7 +362,9 @@ function backToScore() {
     document.getElementById('score').classList.add('active');
 }
 
-function restart() { location.reload(); }
+function restart() { 
+    location.reload(); 
+}
 </script>
 </body>
 </html>
